@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/notion-images/:match*",
+      "destination": "https://www.notion.so/:match*"
+    }
+  ]
+}

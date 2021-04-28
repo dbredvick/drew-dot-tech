@@ -4,7 +4,7 @@ import renderSocialImage from 'puppeteer-social-image-transitive-bs'
 import { getBlockTitle, parsePageId } from 'notion-utils'
 
 import { mapNotionImageUrl } from '../../lib/map-image-url'
-// import { getPageDescription } from '../../lib/get-page-description'
+import { getPageDescription } from '../../lib/get-page-description'
 import { getPage } from '../../lib/notion'
 import * as types from '../../lib/types'
 import {
@@ -82,8 +82,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     title: isRootPage
       ? socialImageTitle
       : getBlockTitle(block, recordMap) || socialImageTitle,
-    subtitle: isRootPage ? socialImageSubtitle : undefined
-    // subtitle: getPageDescription(block, recordMap) || socialImageSubtitle
+    // subtitle: isRootPage ? socialImageSubtitle : undefined
+    subtitle: getPageDescription(block, recordMap) || socialImageSubtitle
   })
 
   res.setHeader(

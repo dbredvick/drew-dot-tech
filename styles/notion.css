@@ -10,6 +10,7 @@
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 54px;
+  font-size: 18px;
 }
 
 .notion-page {
@@ -50,8 +51,9 @@
 }
 
 .notion-gallery-grid .notion-page-title-text {
-  font-size: 2em;
+  font-size: 1.3em;
   white-space: unset;
+  padding-top: 0px;
 }
 
 .notion-gallery-grid .notion-collection-card-property {

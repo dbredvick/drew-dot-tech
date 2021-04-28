@@ -33,7 +33,6 @@ import { PageHead } from './PageHead'
 import { PageActions } from './PageActions'
 import { Footer } from './Footer'
 import { PageSocial } from './PageSocial'
-import { GitHubShareButton } from './GitHubShareButton'
 import { ReactUtterances } from './ReactUtterances'
 
 import styles from './styles.module.css'
@@ -98,14 +97,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
   }
 
   const title = getBlockTitle(block, recordMap) || site.name
-
-  console.log('notion page', {
-    isDev: config.isDev,
-    title,
-    pageId,
-    rootNotionPageId: site.rootNotionPageId,
-    recordMap
-  })
 
   if (!config.isServer) {
     // add important objects to the window global for easy debugging
@@ -260,7 +251,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         darkMode={darkMode.value}
         previewImages={site.previewImages !== false}
         showCollectionViewDropdown={false}
-        showTableOfContents={showTableOfContents}
+        showTableOfContents={false}
         minTableOfContentsItems={minTableOfContentsItems}
         defaultPageIcon={config.defaultPageIcon}
         defaultPageCover={config.defaultPageCover}
@@ -277,8 +268,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
           />
         }
       />
-
-      <GitHubShareButton />
 
       <CustomHtml site={site} />
     </Twitter.Provider>

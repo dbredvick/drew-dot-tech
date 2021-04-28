@@ -26,10 +26,10 @@ export async function getPreviewImages(
   if (!imageDocRefs.length) {
     return {}
   }
-
   const imageDocs = await db.db.getAll(...imageDocRefs)
   const results = await pMap(imageDocs, async (model, index) => {
     if (model.exists) {
+      console.log('one exists')
       return model.data() as types.PreviewImage
     } else {
       const json = {
@@ -44,6 +44,8 @@ export async function getPreviewImages(
         .json() as Promise<types.PreviewImage>
     }
   })
+
+  console.log('heyy prefilter', results)
 
   return results
     .filter(Boolean)

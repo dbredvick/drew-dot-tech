@@ -40,7 +40,6 @@ export async function createPreviewImage(
 ): Promise<types.PreviewImage> {
   console.log('createPreviewImage lambda', { url, id })
   const doc = db.images.doc(id)
-
   try {
     const model = await doc.get()
     if (model.exists) {
