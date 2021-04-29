@@ -6,7 +6,7 @@
     }
   ],
   "functions": {
-    "pages/api/**/*.ts": {
+    "/api/**/*.ts": {
       "maxDuration": 60
     }
   }
