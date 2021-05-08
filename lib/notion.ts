@@ -97,6 +97,7 @@ export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
   }, {})
 
   ;(recordMap as any).tweetAstMap = tweetAstMap
+  console.log(tweetAstMap)
 
   return recordMap
 }
