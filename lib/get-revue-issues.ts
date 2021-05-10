@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-unfetch'
+
 export async function getRevueIssues() {
   const baseUrl = 'https://www.getrevue.co/api'
 

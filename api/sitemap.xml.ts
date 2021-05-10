@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { SiteMap } from '../lib/types'
 import { host } from '../lib/config'
 import { getSiteMaps } from '../lib/get-site-maps'
+import { getRevueIssues } from '../lib/get-revue-issues'
 
 export default async (
   req: NextApiRequest,
@@ -13,19 +14,21 @@ export default async (
   }
 
   const siteMaps = await getSiteMaps()
-
+  const newsletters = await getRevueIssues()
+  console.log(newsletters)
   // cache sitemap for up to one hour
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=3600, max-age=3600, stale-while-revalidate=3600'
   )
   res.setHeader('Content-Type', 'text/xml')
-  res.write(createSitemap(siteMaps[0]))
+  res.write(createSitemap(siteMaps[0], newsletters))
   res.end()
 }
 
 const createSitemap = (
-  siteMap: SiteMap
+  siteMap: SiteMap,
+  newsletters: [any]
 ) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
@@ -45,5 +48,14 @@ const createSitemap = (
           `.trim()
         )
         .join('')}
+        ${newsletters
+          .map((canonicalPagePath) =>
+            `
+              <url>
+                <loc>${host}${canonicalPagePath}</loc>
+              </url>
+            `.trim()
+          )
+          .join('')}
     </urlset>
     `

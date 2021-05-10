@@ -2,6 +2,7 @@ import { fetchTweetAst } from 'static-tweets'
 import pMap from 'p-map'
 import ReactDOMServer from 'react-dom/server'
 import React from 'react'
+import fetch from 'isomorphic-unfetch'
 
 export async function resolveRevueIssue(domain: string, slug?: string) {
   const baseUrl = 'https://www.getrevue.co/api'
