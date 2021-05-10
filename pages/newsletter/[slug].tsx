@@ -61,6 +61,12 @@ export default function RenderShit(props) {
       <div className='prose prose-lg lg:prose-xl max-w-3xl lg:m-auto mx-4 py-12'>
         <h1>{props.title}</h1>
         <div>{parse(props.html, options)}</div>
+        <hr />
+        <script
+          async
+          data-uid='e5c5089877'
+          src='https://drewdottech.ck.page/e5c5089877/index.js'
+        ></script>
       </div>
     </TwitterContextProvider>
   )

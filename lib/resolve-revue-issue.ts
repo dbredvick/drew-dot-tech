@@ -2,7 +2,6 @@ import { fetchTweetAst } from 'static-tweets'
 import pMap from 'p-map'
 import ReactDOMServer from 'react-dom/server'
 import React from 'react'
-import { Tweet } from 'react-static-tweets'
 
 export async function resolveRevueIssue(domain: string, slug?: string) {
   const baseUrl = 'https://www.getrevue.co/api'
@@ -71,7 +70,6 @@ export async function resolveRevueIssue(domain: string, slug?: string) {
         'hello'
       )
     )
-    console.log('rendered:', html)
     result.html = result.html.replace(currentTweet[0], html)
   })
 

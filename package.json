@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@google-cloud/firestore": "^4.9.1",
+    "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.0",
     "chrome-aws-lambda": "^5.5.0",
     "classnames": "^2.2.6",
