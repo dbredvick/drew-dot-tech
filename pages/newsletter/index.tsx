@@ -41,15 +41,15 @@ export default function ListPage(props) {
   return (
     <>
       <div className='bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
-        <div className='relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl'>
+        <div className='relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-4xl'>
           <div>
             <h2 className='text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl'>
-              Weekly Newsletter
+              The Bootstrapper's Journey Weekly
             </h2>
             <div className='mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center'>
               <p className='text-xl text-gray-500'>
-                Weekly articles in your inbox on{' '}
-                <b>growing a bootstrapped business</b>.
+                Bootstrapping products as a solo-founder. Sharing progress,
+                learnings, advice, and memes on the road to ramen profitability.
               </p>
               <form className='mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end'>
                 <div>
@@ -84,7 +84,9 @@ export default function ListPage(props) {
             {posts.map((post) => (
               <div key={post.title}>
                 <p className='text-sm text-gray-500'>
-                  <time dateTime={post.datetime}>{post.date}</time>
+                  <time dateTime={post.sent_at}>
+                    {new Date(post.sent_at).toDateString()}
+                  </time>
                 </p>
                 <a href={post.url} className='mt-2 block'>
                   <p className='text-xl font-semibold text-gray-900'>
