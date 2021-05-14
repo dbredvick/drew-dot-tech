@@ -4,6 +4,8 @@ import { getRevueIssues } from 'lib/get-revue-issues'
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'
 import parse, { HTMLReactParserOptions } from 'html-react-parser'
 import { Element } from 'domhandler/lib/node'
+import Head from 'next/head'
+import Breadcrumbs from 'components/Breadcrumbs'
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug as string
@@ -51,7 +53,16 @@ export default function Post(props) {
         }
       }}
     >
-      <div className='prose prose-lg lg:prose-xl max-w-3xl lg:m-auto mx-4 py-12'>
+      <Head>
+        <title>{props.title}</title>
+        <meta property='description' content={props.description} />
+      </Head>
+      <div className='max-w-3xl lg:m-auto mx-4 pt-6 lg:py-12'>
+        <Breadcrumbs
+          currentPage={{ name: props.title, href: props.url, current: true }}
+        />
+      </div>
+      <div className='prose prose-lg lg:prose-xl max-w-3xl lg:m-auto mx-4 pt-8 lg:py-12'>
         <h1>{props.title}</h1>
         <div>{parse(props.html, options)}</div>
         <hr />
