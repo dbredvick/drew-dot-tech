@@ -58,7 +58,7 @@ export default function ListPage(props) {
             </h2>
             <div className='mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center'>
               <p className='text-xl text-gray-500'>
-                An email each week about the path to ramen profitability as a solo dev.
+                An email each week about turning side projects into businesses as a solo dev.
               </p>
               <form className='mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end'>
                 <div>
