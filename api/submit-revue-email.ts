@@ -4,10 +4,10 @@ import fetch from 'node-fetch'
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const email = req.query.email
-    console.log(process.env.CONVERT_KIT_API_KEY)
+    console.log(process.env.CONVERTKIT_API_KEY)
     const formId = 2263843
     const data = {
-      api_key: process.env.CONVERT_KIT_API_KEY,
+      api_key: process.env.CONVERTKIT_API_KEY,
       email: email
     }
     const response = await fetch(
