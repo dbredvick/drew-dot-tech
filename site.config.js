@@ -8,13 +8,14 @@ module.exports = {
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'drew.tech — bootstrapping products as a solo-founder',
+  name:
+    'drew.tech — modern web dev, SaaS apps, and interesting finds from the internet.',
   domain: 'drew.tech',
   author: 'Drew Bredvick',
 
   // open graph metadata (optional)
   description:
-    "I work a full-time job in tech and bootstrap products on the side to earn financial freedom. Let's build something together.",
+    'I write about modern web dev, building and growing SaaS apps, and interesting things I find on the internet.',
   socialImageTitle: 'drew.tech',
   socialImageSubtitle: 'Hello World! 👋',
 
