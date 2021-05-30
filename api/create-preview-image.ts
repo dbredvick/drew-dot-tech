@@ -38,7 +38,6 @@ export async function createPreviewImage(
   url: string,
   id: string
 ): Promise<types.PreviewImage> {
-  console.log('createPreviewImage lambda', { url, id })
   const doc = db.images.doc(id)
   try {
     const model = await doc.get()
@@ -48,7 +47,6 @@ export async function createPreviewImage(
 
     const { body } = await got(url, { responseType: 'buffer' })
     const result = await lqip(body)
-    console.log('lqip', result.metadata)
 
     const image = {
       url,

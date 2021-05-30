@@ -1,10 +1,11 @@
 import * as playwright from 'playwright-aws-lambda'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const getAbsoluteURL = (path) => {
   const baseURL = 'https://drew.tech'
   return baseURL + path
 }
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Start the browser with the AWS Lambda wrapper (playwright-aws-lambda)
   const browser = await playwright.launchChromium()
   // Create a page with the Open Graph image size best practise
