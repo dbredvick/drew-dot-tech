@@ -4,7 +4,7 @@ import localForage from 'localforage';
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/solid'
 import Image from 'next/image';
 export default function Example() {
-    const [email, setEmail] = useState(null);
+    const [email, setEmail] = useState('');
     const [isRegistered, setIsRegistered] = useState(false);
 
     useEffect(() => {

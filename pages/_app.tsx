@@ -39,13 +39,27 @@ import 'prismjs/components/prism-javascript'
 
 import { bootstrap } from 'lib/bootstrap-client'
 
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+
 if (typeof window !== 'undefined') {
   bootstrap()
 }
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter()
   return (
     <>
+      <Head>
+        <meta
+          property='og:image'
+          content={`https://drew.tech/api/thumbnail?path=${router.asPath}`}
+        />
+        <meta
+          property='twitter:image'
+          content={`https://drew.tech/api/thumbnail?path=${router.asPath}`}
+        />
+      </Head>
       <Component {...pageProps} />
     </>
   )
