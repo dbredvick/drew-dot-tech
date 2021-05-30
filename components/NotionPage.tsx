@@ -33,33 +33,13 @@ import { PageActions } from './PageActions'
 import { Footer } from './Footer'
 import { PageSocial } from './PageSocial'
 import { ReactUtterances } from './ReactUtterances'
+import Hero from './Hero'
 
 import styles from './styles.module.css'
 
-// const Code = dynamic(() =>
-//   import('react-notion-x').then((notion) => notion.Code)
-// )
-//
-// const Collection = dynamic(() =>
-//   import('react-notion-x').then((notion) => notion.Collection)
-// )
-//
-// const CollectionRow = dynamic(
-//   () => import('react-notion-x').then((notion) => notion.CollectionRow),
-//   {
-//     ssr: false
-//   }
-// )
-
 const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
 
-const Equation = dynamic(() =>
-  import('react-notion-x').then((notion) => notion.Equation)
-)
-
-// we're now using a much lighter-weight tweet renderer react-static-tweets
-// instead of the official iframe-based embed widget from twitter
-// const Tweet = dynamic(() => import('react-tweet-embed'))
+const Equation = Hero
 
 const Modal = dynamic(
   () => import('react-notion-x').then((notion) => notion.Modal),

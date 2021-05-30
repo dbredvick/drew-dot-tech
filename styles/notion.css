@@ -7,6 +7,8 @@
  * places to add some flare.
  */
 
+/* purgecss start ignore */
+
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 54px;
@@ -20,6 +22,12 @@
 
 .index-page {
   --notion-max-width: 900px;
+}
+.index-page .notion-title {
+  display: none;
+}
+.notion-block-ad594837ce354521a7eed4ffb95954a2 {
+  display: none;
 }
 
 .notion-text {
@@ -345,3 +353,4 @@
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: saturate(180%) blur(8px);
 }
+/* purgecss end ignore */

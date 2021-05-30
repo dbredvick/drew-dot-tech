@@ -1,8 +1,11 @@
 // global styles shared across the entire site
+/* purgecss start ignore */
 import 'styles/global.css'
+/* purgecss end ignore */
 import 'tailwindcss/tailwind.css'
 
 // core styles shared by all of react-notion-x (required)
+/* purgecss start ignore */
 import 'react-notion-x/src/styles.css'
 
 // used for code syntax highlighting (optional)
@@ -26,6 +29,7 @@ import 'styles/notion.css'
 
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
+/* purgecss end ignore */
 
 // here we're bringing in any languages we want to support for
 // syntax highlighting via Notion's Code block
