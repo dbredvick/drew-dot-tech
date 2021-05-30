@@ -43,8 +43,6 @@ export async function getPreviewImages(
     }
   })
 
-  console.log('heyy prefilter', results)
-
   return results
     .filter(Boolean)
     .filter((image) => !image.error)
