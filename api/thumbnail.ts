@@ -1,5 +1,6 @@
 import * as playwright from 'playwright-aws-lambda'
 import { NextApiRequest, NextApiResponse } from 'next'
+const chromium = require('chrome-aws-lambda')
 
 const getAbsoluteURL = (path) => {
   const baseURL = 'https://drew.tech'
