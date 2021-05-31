@@ -59,6 +59,7 @@ export default function App({ Component, pageProps }) {
           property='twitter:image'
           content={`https://drew.tech/api/thumbnail?path=${router.asPath}`}
         />
+        <meta name='twitter:card' content='summary_large_image' />
       </Head>
       <Component {...pageProps} />
     </>
