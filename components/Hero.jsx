@@ -4,7 +4,6 @@ import localForage from 'localforage';
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/solid'
 import Image from 'next/image';
 export default function Example(props) {
-    console.log(props)
     const type = props.math
 
     const [email, setEmail] = useState('');

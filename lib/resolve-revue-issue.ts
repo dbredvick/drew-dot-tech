@@ -61,7 +61,6 @@ export async function resolveRevueIssue(domain: string, slug?: string) {
 
   tweetData.map((currentTweet, index) => {
     const id = currentTweet[2].split('/')[3]
-    console.log('map', tweetAstMap[id][0])
     const html = ReactDOMServer.renderToStaticMarkup(
       React.createElement(
         'tweet',
