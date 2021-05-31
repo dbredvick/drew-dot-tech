@@ -33,7 +33,7 @@ export default async function handleEmail(req, res) {
     const results = await response.json()
     return res.status(200).json(results)
   } catch (err) {
-    console.log(err)
+    console.log('email', err)
     return res.status(500).json(err)
   }
 }
