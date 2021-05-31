@@ -116,7 +116,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
           repo={config.utterancesGitHubRepo}
           issueMap='issue-term'
           issueTerm='title'
-          theme={darkMode.value ? 'photon-dark' : 'github-light'}
+          theme={'github-light'}
         />
       )
     }
@@ -216,7 +216,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         recordMap={recordMap}
         rootPageId={site.rootNotionPageId}
         fullPage={!isLiteMode}
-        darkMode={darkMode.value}
+        darkMode={false}
         previewImages={site.previewImages !== false}
         showCollectionViewDropdown={false}
         showTableOfContents={!!isBlogPost}
@@ -229,12 +229,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         searchNotion={searchNotion}
         pageFooter={comments}
         pageAside={pageAside}
-        footer={
-          <Footer
-            isDarkMode={darkMode.value}
-            toggleDarkMode={darkMode.toggle}
-          />
-        }
+        footer={<Footer isDarkMode={false} toggleDarkMode={darkMode.toggle} />}
       />
     </TwitterContextProvider>
   )
