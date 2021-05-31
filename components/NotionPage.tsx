@@ -160,16 +160,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
           </>
         )}
 
-        {socialImage ? (
-          <>
-            <meta name='twitter:card' content='summary_large_image' />
-            <meta name='twitter:image' content={socialImage} />
-            <meta property='og:image' content={socialImage} />
-          </>
-        ) : (
-          <meta name='twitter:card' content='summary' />
-        )}
-
         {canonicalPageUrl && (
           <>
             <link rel='canonical' href={canonicalPageUrl} />
