@@ -29,10 +29,10 @@
   // Determine the source of truth
   if (localStorageExists) {
     // source of truth from localStorage
-    setClassOnDocumentBody(localStorageTheme)
+    //setClassOnDocumentBody(localStorageTheme)
   } else if (supportsColorSchemeQuery) {
     // source of truth from system
-    setClassOnDocumentBody(mql.matches)
+    //setClassOnDocumentBody(mql.matches)
     localStorage.setItem(storageKey, mql.matches)
   } else {
     // source of truth from document.body
