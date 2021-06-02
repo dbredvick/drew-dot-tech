@@ -31,7 +31,7 @@ module.exports = {
 
   // image CDN host to proxy all image requests through (optional)
   // NOTE: this requires you to set up an external image proxy
-  imageCDNHost: null,
+  imageCDNHost: 'https://cf-image-proxy.drewtech.workers.dev',
 
   // Utteranc.es comments via GitHub issue comments (optional)
   utterancesGitHubRepo: 'dbredvick/drew-tech-discussion',
