@@ -3,8 +3,10 @@ import localForage from 'localforage';
 
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/solid'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 export default function Example(props) {
     const type = props.math
+    const router = useRouter();
 
     const [email, setEmail] = useState('');
     const [isRegistered, setIsRegistered] = useState(false);
@@ -98,7 +100,7 @@ export default function Example(props) {
                                     </form>)}
                                 <div style={{ marginTop: '12px' }} className="mt-6">
                                     <div className="inline-flex items-center divide-x divide-gray-300">
-                                        <div className="flex-shrink-0 flex pr-5">
+                                        <div className="hidden flex-shrink-0 flex pr-5">
                                             <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
                                             <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
                                             <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
@@ -149,6 +151,8 @@ export default function Example(props) {
                                     height="354"
                                     width="354"
                                     loading="eager"
+                                    onClick={() => { router.push('/about') }}
+
                                 />
                             </div>
                         </div>
@@ -219,7 +223,7 @@ export default function Example(props) {
                                     </form>)}
                                 <div style={{ marginTop: '12px' }} className="mt-6">
                                     <div className="inline-flex items-center divide-x divide-gray-300">
-                                        <div className="flex-shrink-0 flex pr-5">
+                                        <div className="hidden flex-shrink-0 flex pr-5">
                                             <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
                                             <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
                                             <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
@@ -270,6 +274,7 @@ export default function Example(props) {
                                     height="354"
                                     width="354"
                                     loading="eager"
+                                    onClick={() => { router.push('/about') }}
                                 />
                             </div>
                         </div>
