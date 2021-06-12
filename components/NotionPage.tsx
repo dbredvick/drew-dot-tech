@@ -35,11 +35,11 @@ import { PageSocial } from './PageSocial'
 import { ReactUtterances } from './ReactUtterances'
 import Hero from './Hero'
 
+import { useEffect } from 'react'
+
 import styles from './styles.module.css'
 
 const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
-
-const Equation = Hero
 
 const Modal = dynamic(
   () => import('react-notion-x').then((notion) => notion.Modal),
@@ -50,8 +50,11 @@ export const NotionPage: React.FC<types.PageProps> = ({
   site,
   recordMap,
   error,
-  pageId
+  pageId,
+  newsletter
 }) => {
+  const Equation = Hero.bind({ newsletter })
+
   const router = useRouter()
   const lite = useSearchParam('lite')
 

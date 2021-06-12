@@ -29,6 +29,25 @@
 .notion-block-ad594837ce354521a7eed4ffb95954a2 {
   display: none;
 }
+.notion-equation {
+  user-select: auto;
+  -moz-user-select: auto;
+  -webkit-user-select: auto;
+  fill: inherit;
+  display: inherit;
+  position: inherit;
+  border-radius: none;
+  transition: none;
+}
+.notion-equation:active .notion-equation:focus .notion-equation:hover {
+  background: none;
+}
+.notion-equation-inline {
+  user-select: auto;
+  -moz-user-select: auto;
+  -webkit-user-select: auto;
+  fill: inherit;
+}
 
 .notion-text {
   padding: 0.5em 2px;

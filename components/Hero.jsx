@@ -3,14 +3,16 @@ import localForage from 'localforage';
 
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/solid'
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+
 export default function Example(props) {
+    const newsletter = this.newsletter;
     const type = props.math
     const router = useRouter();
 
     const [email, setEmail] = useState('');
     const [isRegistered, setIsRegistered] = useState(false);
-
     useEffect(() => {
         const getData = async () => {
             const registered = await localForage.getItem('registered');
@@ -18,6 +20,19 @@ export default function Example(props) {
         };
         getData();
     }, []);
+
+    useEffect(() => {
+        // remove weird role on equation elements hack
+        const elements = document.getElementsByClassName('notion-equation')
+        try {
+            elements[0].removeAttribute('role')
+            elements[1].removeAttribute('role')
+            elements[2].removeAttribute('role')
+        } catch (err) {
+            console.log(err)
+        }
+    }, [])
+
     const isEmailValid = (possibleEmail) => {
         const emailPattern = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@[*[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+]*/;
         return emailPattern.test(possibleEmail);
@@ -44,10 +59,10 @@ export default function Example(props) {
                                 <div className="mt-6 sm:max-w-xl">
                                     <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
                                         Hi, I'm Drew 👋
-                </h1>
+                                    </h1>
                                     <p style={{ marginTop: '16px' }} className="text-xl text-gray-500">
                                         I write about modern web dev, building and growing SaaS apps, and interesting things I find on the internet.
-                </p>
+                                    </p>
                                     {isRegistered && (
                                         <div className="flex justify-center items-center pt-8 ">
                                             <svg
@@ -66,7 +81,7 @@ export default function Example(props) {
                                             </svg>
                                             <p className="pl-1 text-xl font-extrabold text-gray-700 tracking-tight">
                                                 Thanks for signing up!
-            </p>
+                                            </p>
                                         </div>
                                     )}
                                 </div>
@@ -75,7 +90,7 @@ export default function Example(props) {
                                         <div className="min-w-0 flex-1">
                                             <label htmlFor="hero_email" className="sr-only">
                                                 Email address
-                  </label>
+                                            </label>
                                             <input
                                                 id="hero_email"
                                                 name="email"
@@ -95,7 +110,7 @@ export default function Example(props) {
                                                 className="block w-full rounded-md border border-transparent px-5 py-3 bg-blue-600 text-base font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:px-10"
                                             >
                                                 Notify me
-                  </button>
+                                            </button>
                                         </div>
                                     </form>)}
                                 <div style={{ marginTop: '12px' }} className="mt-6">
@@ -108,8 +123,8 @@ export default function Example(props) {
                                             <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
                                         </div>
                                         <div className="min-w-0 flex-1 pl-5 py-1 text-sm text-gray-500 sm:py-3">
-                                            <span className="font-medium text-gray-900">Recent review: </span> <span className="italic">Loved your article!</span>{' — '}
-                                            <span className="font-medium text-blue-600">My mom.</span>
+                                            <span className="font-medium text-gray-900">Recent issue: </span> <Link href={newsletter.url} passHref><a className="italic">{newsletter.title}</a></Link>{' — '}
+                                            <span className="font-medium text-blue-600"><Link passHref href={newsletter.url}><a>Read it</a></Link></span>
                                         </div>
                                     </div>
                                 </div>
@@ -167,10 +182,10 @@ export default function Example(props) {
                                 <div className="mt-6 sm:max-w-xl">
                                     <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
                                         Want to read more articles like this?
-                </h1>
+                                    </h1>
                                     <p style={{ marginTop: '16px' }} className="text-xl text-gray-500">
                                         I write about modern web dev, building and growing SaaS apps, and interesting things I find on the internet.
-                </p>
+                                    </p>
                                     {isRegistered && (
                                         <div className="flex justify-center items-center pt-8 ">
                                             <svg
@@ -189,7 +204,7 @@ export default function Example(props) {
                                             </svg>
                                             <p className="pl-1 text-xl font-extrabold text-gray-700 tracking-tight">
                                                 Thanks for signing up!
-            </p>
+                                            </p>
                                         </div>
                                     )}
                                 </div>
@@ -198,7 +213,7 @@ export default function Example(props) {
                                         <div className="min-w-0 flex-1">
                                             <label htmlFor="hero_email" className="sr-only">
                                                 Email address
-                  </label>
+                                            </label>
                                             <input
                                                 id="hero_email"
                                                 name="email"
@@ -218,7 +233,7 @@ export default function Example(props) {
                                                 className="block w-full rounded-md border border-transparent px-5 py-3 bg-blue-600 text-base font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:px-10"
                                             >
                                                 Notify me
-                  </button>
+                                            </button>
                                         </div>
                                     </form>)}
                                 <div style={{ marginTop: '12px' }} className="mt-6">
@@ -231,8 +246,8 @@ export default function Example(props) {
                                             <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
                                         </div>
                                         <div className="min-w-0 flex-1 pl-5 py-1 text-sm text-gray-500 sm:py-3">
-                                            <span className="font-medium text-gray-900">Recent review: </span> <span className="italic">Loved your article!</span>{' — '}
-                                            <span className="font-medium text-blue-600">My mom.</span>
+                                            <span className="font-medium text-gray-900">Recent issue: </span> <Link href={newsletter.url} passHref><a className="italic">{newsletter.title}</a></Link>{' — '}
+                                            <span className="font-medium text-blue-600"><Link passHref href={newsletter.url}><a>Read it</a></Link></span>
                                         </div>
                                     </div>
                                 </div>
@@ -286,10 +301,10 @@ export default function Example(props) {
                     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
                         <h2 className="inline text-3xl font-extrabold tracking-tight text-gray-900 sm:block sm:text-4xl">
                             Want to read more articles like this?
-        </h2>
+                        </h2>
                         <p className="inline text-3xl font-extrabold tracking-tight text-blue-600 sm:block sm:text-4xl">
                             Sign up for the free newsletter.
-        </p>
+                        </p>
                         {isRegistered && (
                             <div className="flex justify-center items-center pt-8 ">
                                 <svg
@@ -308,7 +323,7 @@ export default function Example(props) {
                                 </svg>
                                 <p className="pl-1 text-xl font-extrabold text-gray-700 tracking-tight">
                                     Thanks for signing up!
-            </p>
+                                </p>
                             </div>
                         )}
                         {!isRegistered && (
@@ -316,7 +331,7 @@ export default function Example(props) {
 
                                 <label htmlFor="emailAddress" className="sr-only">
                                     Email address
-          </label>
+                                </label>
                                 <input
                                     id="emailAddress"
                                     className="w-full px-5 py-3 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 sm:max-w-xs border-gray-300 rounded-md"
@@ -335,7 +350,7 @@ export default function Example(props) {
                                         className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                                     >
                                         Notify me
-            </button>
+                                    </button>
                                 </div>
                             </form>)}
                     </div>

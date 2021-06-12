@@ -3,6 +3,7 @@ import { isDev, domain } from 'lib/config'
 import { getSiteMaps } from 'lib/get-site-maps'
 import { resolveNotionPage } from 'lib/resolve-notion-page'
 import { NotionPage } from 'components'
+import { getRevueIssuesData } from 'lib/get-revue-issues'
 
 export const getStaticProps = async (context) => {
   const rawPageId = context.params.pageId as string
@@ -16,7 +17,9 @@ export const getStaticProps = async (context) => {
       }
     }
 
-    const props = await resolveNotionPage(domain, rawPageId)
+    const data = await resolveNotionPage(domain, rawPageId)
+    const latestNewsletterData = await getRevueIssuesData()
+    const props = { ...data, newsletter: latestNewsletterData[0] }
 
     return { props, revalidate: 10 }
   } catch (err) {
