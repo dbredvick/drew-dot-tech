@@ -26,8 +26,11 @@ export default function Example(props) {
         const elements = document.getElementsByClassName('notion-equation')
         try {
             elements[0].removeAttribute('role')
+            elements[0].removeAttribute('tabindex')
             elements[1].removeAttribute('role')
+            elements[1].removeAttribute('tabindex')
             elements[2].removeAttribute('role')
+            elements[2].removeAttribute('tabindex')
         } catch (err) {
             console.log(err)
         }
@@ -52,8 +55,8 @@ export default function Example(props) {
     return (
         <>
             {type === 'hero' && (<div className="bg-white ">
-                <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-24">
-                    <div className="mx-auto max-w-md  sm:max-w-3xl lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
+                <div className="overflow-hidden sm:pt-12 lg:relative lg:py-24">
+                    <div className="mx-auto max-w-md sm:max-w-3xl lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-18">
                         <div>
                             <div className="mt-20">
                                 <div className="mt-6 sm:max-w-xl">
@@ -115,13 +118,6 @@ export default function Example(props) {
                                     </form>)}
                                 <div style={{ marginTop: '12px' }} className="mt-6">
                                     <div className="inline-flex items-center divide-x divide-gray-300">
-                                        <div className="hidden flex-shrink-0 flex pr-5">
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                        </div>
                                         <div className="min-w-0 flex-1 pl-5 py-1 text-sm text-gray-500 sm:py-3">
                                             <span className="font-medium text-gray-900">Recent issue: </span> <Link href={newsletter.url} passHref><a className="italic">{newsletter.title}</a></Link>{' — '}
                                             <span className="font-medium text-blue-600"><Link passHref href={newsletter.url}><a>Read it</a></Link></span>
@@ -134,30 +130,7 @@ export default function Example(props) {
 
                     <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
                         <div className="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                            <div className="hidden sm:block">
-                                <div className="absolute inset-y-0 left-1/2 w-screen bg-blue-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full" />
-                                <svg
-                                    className="absolute top-8 right-1/2 -mr-3 lg:m-0 lg:left-0"
-                                    width={404}
-                                    height={392}
-                                    fill="none"
-                                    viewBox="0 0 404 392"
-                                >
-                                    <defs>
-                                        <pattern
-                                            id="837c3e70-6c3a-44e6-8854-cc48c737b659"
-                                            x={0}
-                                            y={0}
-                                            width={20}
-                                            height={20}
-                                            patternUnits="userSpaceOnUse"
-                                        >
-                                            <rect x={0} y={0} width={2} height={2} className="text-blue-200" fill="currentColor" />
-                                        </pattern>
-                                    </defs>
-                                    <rect width={404} height={392} fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)" />
-                                </svg>
-                            </div>
+
                             <div className="relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
                                 <Image
                                     className="w-full rounded-full ring-2 ring-blue-500 ring-opacity-10 lg:h-full lg:w-auto lg:max-w-none"
@@ -176,7 +149,7 @@ export default function Example(props) {
             </div>)}
             {type === 'cta' && (<div className="bg-white ">
                 <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-24">
-                    <div className="mx-auto max-w-md  sm:max-w-3xl lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
+                    <div className="mx-auto max-w-md sm:max-w-3xl lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-18">
                         <div>
                             <div className="mt-20">
                                 <div className="mt-6 sm:max-w-xl">
@@ -238,13 +211,7 @@ export default function Example(props) {
                                     </form>)}
                                 <div style={{ marginTop: '12px' }} className="mt-6">
                                     <div className="inline-flex items-center divide-x divide-gray-300">
-                                        <div className="hidden flex-shrink-0 flex pr-5">
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                            <StarIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                                        </div>
+
                                         <div className="min-w-0 flex-1 pl-5 py-1 text-sm text-gray-500 sm:py-3">
                                             <span className="font-medium text-gray-900">Recent issue: </span> <Link href={newsletter.url} passHref><a className="italic">{newsletter.title}</a></Link>{' — '}
                                             <span className="font-medium text-blue-600"><Link passHref href={newsletter.url}><a>Read it</a></Link></span>
@@ -257,30 +224,7 @@ export default function Example(props) {
 
                     <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
                         <div className="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                            <div className="hidden sm:block">
-                                <div className="absolute inset-y-0 left-1/2 w-screen bg-blue-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full" />
-                                <svg
-                                    className="absolute top-8 right-1/2 -mr-3 lg:m-0 lg:left-0"
-                                    width={404}
-                                    height={392}
-                                    fill="none"
-                                    viewBox="0 0 404 392"
-                                >
-                                    <defs>
-                                        <pattern
-                                            id="837c3e70-6c3a-44e6-8854-cc48c737b659"
-                                            x={0}
-                                            y={0}
-                                            width={20}
-                                            height={20}
-                                            patternUnits="userSpaceOnUse"
-                                        >
-                                            <rect x={0} y={0} width={2} height={2} className="text-blue-200" fill="currentColor" />
-                                        </pattern>
-                                    </defs>
-                                    <rect width={404} height={392} fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)" />
-                                </svg>
-                            </div>
+
                             <div className="relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
                                 <Image
                                     className="w-full rounded-full ring-2 ring-blue-500 ring-opacity-10 lg:h-full lg:w-auto lg:max-w-none"
