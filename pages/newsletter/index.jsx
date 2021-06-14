@@ -10,7 +10,7 @@ import { getRevueIssuesData } from 'lib/get-revue-issues'
 export const getStaticProps = async () => {
   try {
     const items = await getRevueIssuesData()
-    return { props: { items }, revalidate: 10 }
+    return { props: { items }, revalidate: 300 }
   } catch (err) {
     console.error('page error', err)
 
@@ -115,7 +115,7 @@ export default function ListPage(props) {
                       className='text-base font-semibold text-green-600 hover:text-green-500'
                     >
                       Read full story
-                  </a>
+                    </a>
                   </Link>
                 </div>
               </div>

@@ -21,7 +21,7 @@ export const getStaticProps = async (context) => {
     const latestNewsletterData = await getRevueIssuesData()
     const props = { ...data, newsletter: latestNewsletterData[0] }
 
-    return { props, revalidate: 10 }
+    return { props, revalidate: 300 }
   } catch (err) {
     console.error('page error', domain, rawPageId, err)
 

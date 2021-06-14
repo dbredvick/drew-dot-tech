@@ -161,7 +161,7 @@ export default function Example(props) {
                             <div className="relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
                                 <Image
                                     className="w-full rounded-full ring-2 ring-blue-500 ring-opacity-10 lg:h-full lg:w-auto lg:max-w-none"
-                                    src="/drew-smaller.jpg"
+                                    src="/drew-header.jpg"
                                     alt=""
                                     height="354"
                                     width="354"
@@ -284,7 +284,7 @@ export default function Example(props) {
                             <div className="relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
                                 <Image
                                     className="w-full rounded-full ring-2 ring-blue-500 ring-opacity-10 lg:h-full lg:w-auto lg:max-w-none"
-                                    src="/drew-smaller.jpg"
+                                    src="/drew-header.jpg"
                                     alt=""
                                     height="354"
                                     width="354"

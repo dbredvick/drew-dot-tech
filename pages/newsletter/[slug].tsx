@@ -13,7 +13,7 @@ export const getStaticProps = async (context) => {
   try {
     const props = await resolveRevueIssue(domain, slug)
 
-    return { props, revalidate: 10 }
+    return { props, revalidate: 300 }
   } catch (err) {
     console.error('page error', domain, slug, err)
 
