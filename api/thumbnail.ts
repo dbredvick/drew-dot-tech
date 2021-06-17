@@ -32,7 +32,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
   })
   // Generate the full URL out of the given path (GET parameter)
-  const url = getAbsoluteURL(req.query['path'] || '')
+  const url = getAbsoluteURL(req.query.path || '')
   await page.goto(url, {
     timeout: 15 * 1000
   })

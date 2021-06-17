@@ -3,8 +3,8 @@ import { Transition } from '@headlessui/react'
 import { CheckCircleIcon } from '@heroicons/react/outline'
 import { XIcon } from '@heroicons/react/solid'
 import Breadcrumbs from 'components/Breadcrumbs'
-import Link from 'next/link';
-import Head from 'next/head';
+import Link from 'next/link'
+import Head from 'next/head'
 
 import { getRevueIssuesData } from 'lib/get-revue-issues'
 export const getStaticProps = async () => {
@@ -45,9 +45,12 @@ export default function ListPage(props) {
     <>
       <Head>
         <title>Drew's Journal</title>
-        <meta property="description" content="An email each week about the path to ramen profitability as a solo dev." />
+        <meta
+          property='description'
+          content='An email each week about the path to ramen profitability as a solo dev.'
+        />
       </Head>
-      <div className="pt-6 px-4 md:px-0 md:pt-12  relative max-w-lg mx-auto  lg:max-w-3xl">
+      <div className='pt-6 px-4 md:px-0 md:pt-12  relative max-w-lg mx-auto  lg:max-w-3xl'>
         <Breadcrumbs />
       </div>
       <div className='bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
@@ -58,7 +61,8 @@ export default function ListPage(props) {
             </h2>
             <div className='mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center'>
               <p className='text-xl text-gray-500'>
-                An email each week about modern web dev, building and growing SaaS apps, and interesting things I found on the internet.
+                An email each week about modern web dev, building and growing
+                SaaS apps, and interesting things I found on the internet.
               </p>
               <form className='mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end'>
                 <div>
@@ -110,10 +114,7 @@ export default function ListPage(props) {
                 </Link>
                 <div className='mt-3'>
                   <Link href={post.url} passHref>
-                    <a
-
-                      className='text-base font-semibold text-green-600 hover:text-green-500'
-                    >
+                    <a className='text-base font-semibold text-green-600 hover:text-green-500'>
                       Read full story
                     </a>
                   </Link>
