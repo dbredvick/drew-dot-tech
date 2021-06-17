@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react'
 import localForage from 'localforage'
-
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -37,7 +37,7 @@ export default function Example(props) {
   }, [])
 
   const isEmailValid = (possibleEmail) => {
-    const emailPattern = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@[*[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+]*/
+    const emailPattern = /(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@[*[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+]*/
     return emailPattern.test(possibleEmail)
   }
 

@@ -7,6 +7,9 @@
       "jsx": true
     }
   },
+  "globals": {
+    "fetch": "writable"
+  },
   "settings": {
     "react": {
       "version": "detect"

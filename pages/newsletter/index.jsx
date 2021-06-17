@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Fragment, useState } from 'react'
 import { Transition } from '@headlessui/react'
 import { CheckCircleIcon } from '@heroicons/react/outline'
@@ -5,7 +6,6 @@ import { XIcon } from '@heroicons/react/solid'
 import Breadcrumbs from 'components/Breadcrumbs'
 import Link from 'next/link'
 import Head from 'next/head'
-
 import { getRevueIssuesData } from 'lib/get-revue-issues'
 export const getStaticProps = async () => {
   try {
@@ -26,7 +26,7 @@ export default function ListPage(props) {
   const posts = props.items
 
   const isEmailValid = (possibleEmail) => {
-    const emailPattern = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@[*[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+]*/
+    const emailPattern = /(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@[*[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+]*/
     return emailPattern.test(possibleEmail)
   }
 

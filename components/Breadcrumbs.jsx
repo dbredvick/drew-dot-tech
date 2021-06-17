@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import Link from 'next/link'
 import { HomeIcon } from '@heroicons/react/solid'
-
 const pages = [{ name: 'Newsletter', href: '/newsletter', current: false }]
 
 export const Breadcrumbs = ({ currentPage }) => {

@@ -3,7 +3,6 @@ export default async function handleEmail(req, res) {
   try {
     const email = req.query.email
 
-    const payload = {}
     // if (typeof sendReport !== 'undefined') {
     //   payload = {
     //     domain,

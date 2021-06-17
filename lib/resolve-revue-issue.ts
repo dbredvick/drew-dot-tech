@@ -18,10 +18,10 @@ export async function resolveRevueIssue(domain: string, slug?: string) {
   }))
   const result = issues.filter((x) => x.url === slug)[0]
 
-  const embedRegex = /\[embed https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)\]/g
-  const tweetRegex = /\[tweet https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)\]/g
+  const embedRegex = /\[embed https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)\]/g
+  const tweetRegex = /\[tweet https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)\]/g
 
-  const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+  const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/
   const embeds = result.html.matchAll(embedRegex)
   const tweets = result.html.matchAll(tweetRegex)
 
@@ -59,7 +59,7 @@ export async function resolveRevueIssue(domain: string, slug?: string) {
 
   result.tweetAstMap = tweetAstMap
 
-  tweetData.map((currentTweet, index) => {
+  tweetData.map((currentTweet) => {
     const id = currentTweet[2].split('/')[3]
     const html = ReactDOMServer.renderToStaticMarkup(
       React.createElement(
@@ -70,7 +70,7 @@ export async function resolveRevueIssue(domain: string, slug?: string) {
         'hello'
       )
     )
-    result.html = result.html.replace(currentTweet[0], html)
+    return (result.html = result.html.replace(currentTweet[0], html))
   })
 
   // render tweets to html
@@ -82,7 +82,7 @@ export async function resolveRevueIssue(domain: string, slug?: string) {
     const iframeHtml = `<iframe src="https://player.vimeo.com/video${
       [...url][2]
     }" style='width: 100%;' frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`
-    result.html = result.html.replace(embed[0], iframeHtml)
+    return (result.html = result.html.replace(embed[0], iframeHtml))
   })
   return result
 }

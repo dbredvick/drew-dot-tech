@@ -1,4 +1,4 @@
-import { isDev, domain } from 'lib/config'
+import { domain } from 'lib/config'
 import { resolveRevueIssue } from 'lib/resolve-revue-issue'
 import { getRevueIssues } from 'lib/get-revue-issues'
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'

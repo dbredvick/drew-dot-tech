@@ -6,8 +6,6 @@ import cs from 'classnames'
 import { useRouter } from 'next/router'
 import { useSearchParam } from 'react-use'
 import BodyClassName from 'react-body-classname'
-import useDarkMode from 'use-dark-mode'
-import { PageBlock } from 'notion-types'
 
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'
 
@@ -34,8 +32,6 @@ import { Footer } from './Footer'
 import { PageSocial } from './PageSocial'
 import { ReactUtterances } from './ReactUtterances'
 import Hero from './Hero'
-
-import { useEffect } from 'react'
 
 import styles from './styles.module.css'
 
@@ -64,8 +60,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
   // lite mode is for oembed
   const isLiteMode = lite === 'true'
   const searchParams = new URLSearchParams(params)
-
-  const darkMode = useDarkMode(false, { classNameDark: 'light-mode' })
 
   if (router.isFallback) {
     return <Loading />
@@ -97,13 +91,12 @@ export const NotionPage: React.FC<types.PageProps> = ({
   //   parsePageId(block.id) === parsePageId(site.rootNotionPageId)
   const isBlogPost =
     block.type === 'page' && block.parent_table === 'collection'
-  const showTableOfContents = !!isBlogPost
   const minTableOfContentsItems = 3
 
-  const socialImage = mapNotionImageUrl(
-    (block as PageBlock).format?.page_cover || config.defaultPageCover,
-    block
-  )
+  // const socialImage = mapNotionImageUrl(
+  //   (block as PageBlock).format?.page_cover || config.defaultPageCover,
+  //   block
+  // )
 
   const socialDescription =
     getPageDescription(block, recordMap) ?? config.description
@@ -232,7 +225,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         searchNotion={searchNotion}
         pageFooter={comments}
         pageAside={pageAside}
-        footer={<Footer isDarkMode={false} toggleDarkMode={darkMode.toggle} />}
+        footer={<Footer />}
       />
     </TwitterContextProvider>
   )
