@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import localForage from 'localforage'
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
+import me from '../public/drew-header.jpg'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -10,6 +11,8 @@ export default function Example(props) {
   const newsletter = this.newsletter
   const type = props.math
   const router = useRouter()
+
+  const copy = `I write about the best way to build side projects & startups with Next.js + React.`
 
   const [email, setEmail] = useState('')
   const [isRegistered, setIsRegistered] = useState(false)
@@ -68,8 +71,7 @@ export default function Example(props) {
                       style={{ marginTop: '16px' }}
                       className='text-xl text-gray-500'
                     >
-                      I write about modern web dev, building and growing SaaS
-                      apps, and interesting things I find on the internet.
+                      {copy}
                     </p>
                     {isRegistered && (
                       <div className='flex justify-center items-center pt-8 '>
@@ -153,11 +155,12 @@ export default function Example(props) {
                 <div className='relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-12'>
                   <Image
                     className='w-full rounded-full ring-2 ring-blue-500 ring-opacity-10 lg:h-full lg:w-auto lg:max-w-none'
-                    src='/drew-header.jpg'
+                    src={me}
                     alt=''
-                    height='354'
-                    width='354'
+                    height='300'
+                    width='300'
                     loading='eager'
+                    placeholder='blur'
                     onClick={() => {
                       router.push('/about')
                     }}
@@ -182,8 +185,7 @@ export default function Example(props) {
                       style={{ marginTop: '16px' }}
                       className='text-xl text-gray-500'
                     >
-                      I write about modern web dev, building and growing SaaS
-                      apps, and interesting things I find on the internet.
+                      {copy}
                     </p>
                     {isRegistered && (
                       <div className='flex justify-center items-center pt-8 '>
@@ -267,11 +269,12 @@ export default function Example(props) {
                 <div className='relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-12'>
                   <Image
                     className='w-full rounded-full ring-2 ring-blue-500 ring-opacity-10 lg:h-full lg:w-auto lg:max-w-none'
-                    src='/drew-header.jpg'
+                    src={me}
                     alt=''
-                    height='354'
-                    width='354'
+                    height='300'
+                    width='300'
                     loading='eager'
+                    placeholder='blur'
                     onClick={() => {
                       router.push('/about')
                     }}
