@@ -21,7 +21,12 @@ export async function resolveRevueIssue(domain: string, slug?: string) {
   const embedRegex = /\[embed https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)\]/g
   const tweetRegex = /\[tweet https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)\]/g
 
+  const captionRegex = /\[caption align="alignnone" width="980"\]/g
+  const captionEndRegex = /\[\/caption\]/g
   const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/
+
+  const captionStarts = result.html.matchAll(captionRegex)
+  const captionEnds = result.html.matchAll(captionEndRegex)
   const embeds = result.html.matchAll(embedRegex)
   const tweets = result.html.matchAll(tweetRegex)
 
@@ -83,6 +88,16 @@ export async function resolveRevueIssue(domain: string, slug?: string) {
       [...url][2]
     }" style='width: 100%;' frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`
     return (result.html = result.html.replace(embed[0], iframeHtml))
+  })
+
+  const captionFinds = [...captionStarts]
+  captionFinds.map((caption) => {
+    return (result.html = result.html.replace(caption[0], ''))
+  })
+
+  const captionEndsFinds = [...captionEnds]
+  captionEndsFinds.map((caption) => {
+    return (result.html = result.html.replace(caption[0], ''))
   })
   return result
 }

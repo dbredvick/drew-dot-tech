@@ -78,7 +78,7 @@ export default function ListPage(props) {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className='appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:ring-green-500 focus:border-green-500 lg:max-w-xs'
+                    className='appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 lg:max-w-xs'
                     placeholder='Enter your email'
                   />
                 </div>
@@ -86,7 +86,7 @@ export default function ListPage(props) {
                   <button
                     type='button'
                     onClick={submitEmail}
-                    className='w-full bg-green-600 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:w-auto sm:inline-flex'
+                    className='w-full bg-blue-600 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto sm:inline-flex'
                   >
                     Notify me
                   </button>
@@ -115,7 +115,7 @@ export default function ListPage(props) {
                 </Link>
                 <div className='mt-3'>
                   <Link href={post.url} passHref>
-                    <a className='text-base font-semibold text-green-600 hover:text-green-500'>
+                    <a className='text-base font-semibold text-blue-600 hover:text-blue-500'>
                       Read full story
                     </a>
                   </Link>
@@ -148,7 +148,7 @@ export default function ListPage(props) {
                   <div className='flex items-start'>
                     <div className='flex-shrink-0'>
                       <CheckCircleIcon
-                        className='h-6 w-6 text-green-400'
+                        className='h-6 w-6 text-blue-400'
                         aria-hidden='true'
                       />
                     </div>
