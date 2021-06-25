@@ -2,6 +2,8 @@ import Head from 'next/head'
 import * as React from 'react'
 import * as types from 'lib/types'
 import { PageHead } from './PageHead'
+import Image from 'next/image'
+import imgSrc from '../public/404.png'
 
 import styles from './styles.module.css'
 
@@ -33,8 +35,8 @@ export const Page404: React.FC<types.PageProps> = ({ site, pageId, error }) => {
             )
           )}
 
-          <img
-            src='/404.png'
+          <Image
+            src={imgSrc}
             alt='404 Not Found'
             className={styles.errorImage}
           />

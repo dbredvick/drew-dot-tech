@@ -5,7 +5,6 @@ import 'styles/global.css'
 import 'tailwindcss/tailwind.css'
 
 // core styles shared by all of react-notion-x (required)
-/* purgecss start ignore */
 import 'react-notion-x/src/styles.css'
 
 // used for code syntax highlighting (optional)
@@ -19,7 +18,7 @@ import 'prismjs/themes/prism-coy.css'
 // import 'rc-dropdown/assets/index.css'
 
 // used for rendering equations (optional)
-import 'katex/dist/katex.min.css'
+// import 'katex/dist/katex.min.css'
 
 // core styles for static tweet renderer (optional)
 import 'react-static-tweets/styles.css'
@@ -29,7 +28,6 @@ import 'styles/notion.css'
 
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
-/* purgecss end ignore */
 
 // here we're bringing in any languages we want to support for
 // syntax highlighting via Notion's Code block

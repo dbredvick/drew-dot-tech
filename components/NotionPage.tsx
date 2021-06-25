@@ -10,7 +10,7 @@ import BodyClassName from 'react-body-classname'
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'
 
 // core notion renderer
-import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
+import { NotionRenderer } from 'react-notion-x'
 
 // utils
 import { getBlockTitle } from 'notion-utils'
@@ -25,12 +25,10 @@ import * as config from 'lib/config'
 // components
 import { CustomFont } from './CustomFont'
 import { Loading } from './Loading'
-import { Page404 } from './Page404'
 import { PageHead } from './PageHead'
 import { PageActions } from './PageActions'
 import { Footer } from './Footer'
 import { PageSocial } from './PageSocial'
-import { ReactUtterances } from './ReactUtterances'
 import Hero from './Hero'
 
 import styles from './styles.module.css'
@@ -39,6 +37,22 @@ const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
 
 const Modal = dynamic(
   () => import('react-notion-x').then((notion) => notion.Modal),
+  { ssr: false }
+)
+const Code = dynamic(
+  () => import('react-notion-x').then((notion) => notion.Code),
+  { ssr: false }
+)
+const Collection = dynamic(
+  () => import('react-notion-x').then((notion) => notion.Collection),
+  { ssr: false }
+)
+const CollectionRow = dynamic(
+  () => import('react-notion-x').then((notion) => notion.CollectionRow),
+  { ssr: false }
+)
+const Page404 = dynamic(
+  () => import('../components/Page404').then((imported) => imported.Page404),
   { ssr: false }
 )
 
@@ -107,8 +121,13 @@ export const NotionPage: React.FC<types.PageProps> = ({
   // only display comments and page actions on blog post pages
   if (isBlogPost) {
     if (config.utterancesGitHubRepo) {
+      const ReactUtterances = dynamic(() =>
+        import('./ReactUtterances').then((imported) => imported.ReactUtterances)
+      )
       comments = (
         <ReactUtterances
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           repo={config.utterancesGitHubRepo}
           issueMap='issue-term'
           issueTerm='title'

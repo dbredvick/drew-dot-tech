@@ -8,6 +8,7 @@ export const getStaticProps = async () => {
   try {
     const data = await resolveNotionPage(domain)
     const latestNewsletterData = await getRevueIssuesData()
+    delete latestNewsletterData[0].html
     const props = { ...data, newsletter: latestNewsletterData[0] }
     return { props, revalidate: 300 }
   } catch (err) {
