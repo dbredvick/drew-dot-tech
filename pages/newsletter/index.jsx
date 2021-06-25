@@ -10,6 +10,9 @@ import { getRevueIssuesData } from 'lib/get-revue-issues'
 export const getStaticProps = async () => {
   try {
     const items = await getRevueIssuesData()
+    items.map((item) => {
+      return delete item.html
+    })
     return { props: { items }, revalidate: 300 }
   } catch (err) {
     console.error('page error', err)
