@@ -74,7 +74,7 @@ export default function Example(props) {
                       {copy}
                     </p>
                     {isRegistered && (
-                      <div className='flex justify-center items-center pt-8 '>
+                      <div className='flex justify-center items-center lg:justify-start lg:items-start pt-8 '>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           fill='none'
@@ -130,7 +130,7 @@ export default function Example(props) {
                   )}
                   <div style={{ marginTop: '12px' }} className='mt-6'>
                     <div className='inline-flex items-center divide-x divide-gray-300'>
-                      <div className='min-w-0 flex-1 pl-5 py-1 text-sm text-gray-500 sm:py-3'>
+                      <div className='min-w-0 flex-1 py-1 text-sm text-gray-500 sm:py-3'>
                         <span className='font-medium text-gray-900'>
                           Recent issue:{' '}
                         </span>{' '}
@@ -152,7 +152,7 @@ export default function Example(props) {
 
             <div className='sm:mx-auto sm:max-w-3xl sm:px-6'>
               <div className='py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
-                <div className='relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-12'>
+                <div className='relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-24'>
                   <Image
                     className='w-full rounded-full ring-2 ring-blue-500 ring-opacity-10 lg:h-full lg:w-auto lg:max-w-none'
                     src={me}
@@ -188,7 +188,7 @@ export default function Example(props) {
                       {copy}
                     </p>
                     {isRegistered && (
-                      <div className='flex justify-center items-center pt-8 '>
+                      <div className='flex justify-center items-center lg:justify-start lg:items-start pt-8 '>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           fill='none'
@@ -244,7 +244,7 @@ export default function Example(props) {
                   )}
                   <div style={{ marginTop: '12px' }} className='mt-6'>
                     <div className='inline-flex items-center divide-x divide-gray-300'>
-                      <div className='min-w-0 flex-1 pl-5 py-1 text-sm text-gray-500 sm:py-3'>
+                      <div className='min-w-0 flex-1 py-1 text-sm text-gray-500 sm:py-3'>
                         <span className='font-medium text-gray-900'>
                           Recent issue:{' '}
                         </span>{' '}
@@ -266,7 +266,7 @@ export default function Example(props) {
 
             <div className='sm:mx-auto sm:max-w-3xl sm:px-6'>
               <div className='py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
-                <div className='relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-12'>
+                <div className='relative sm:max-w-sm sm:px-0 lg:max-w-none lg:h-full lg:pl-24'>
                   <Image
                     className='w-full rounded-full ring-2 ring-blue-500 ring-opacity-10 lg:h-full lg:w-auto lg:max-w-none'
                     src={me}
@@ -295,7 +295,7 @@ export default function Example(props) {
               Sign up for the free newsletter.
             </p>
             {isRegistered && (
-              <div className='flex justify-center items-center pt-8 '>
+              <div className='flex justify-center items-center lg:justify-start lg:items-start pt-8 '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
