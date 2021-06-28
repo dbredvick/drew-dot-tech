@@ -123,7 +123,7 @@ export default function Example(props) {
                           onClick={submitEmail}
                           className='block w-full rounded-md border border-transparent px-5 py-3 bg-blue-600 text-base font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:px-10'
                         >
-                          Notify me
+                          Subscribe
                         </button>
                       </div>
                     </form>
@@ -237,7 +237,7 @@ export default function Example(props) {
                           onClick={submitEmail}
                           className='block w-full rounded-md border border-transparent px-5 py-3 bg-blue-600 text-base font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:px-10'
                         >
-                          Notify me
+                          Subscribe
                         </button>
                       </div>
                     </form>
@@ -337,7 +337,7 @@ export default function Example(props) {
                     onClick={submitEmail}
                     className='w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
                   >
-                    Notify me
+                    Subscribe
                   </button>
                 </div>
               </form>

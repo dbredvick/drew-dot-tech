@@ -91,7 +91,7 @@ export default function ListPage(props) {
                     onClick={submitEmail}
                     className='w-full bg-blue-600 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto sm:inline-flex'
                   >
-                    Notify me
+                    Subscribe
                   </button>
                 </div>
               </form>
